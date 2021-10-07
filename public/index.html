@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>marukun-chat</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+</head>
+<body>
+
+<h1 style="position: absolute; left: 1%; margin: 0%; color: white;">#General</h1>
+
+<!-- STEP1. 接続中 -->
+<section id="nowconnecting">
+  ...サーバに接続中
+</section>
+<!-- /接続中 -->
+
+<!-- STEP2. 名前を入力 -->
+<section id="inputmyname">
+  <p>あなたの名前を入力してください</p>
+  <form id="frm-myname" autocomplete="off">
+    <input type="text" id="txt-myname">
+    <button>login</button>
+  </form>
+</section>
+<!-- /名前を入力 -->
+
+<!-- STEP3. チャット開始 -->
+<section id="chat">
+  <!-- 発言フォーム -->
+  <form id="frm-post" autocomplete="off" >
+    <span id="myname"></span><br>
+    <input type="text" id="msg" placeholder="Generalにメッセージを送信....">&nbsp;&nbsp;<button><img src="https://icooon-mono.com/i/icon_11450/icon_114500_256.png" width="25" height="25"></button>
+  </form>
+
+  <section id="chat-main">
+    <!-- 発言ログ -->
+    <ul id="msglist"></ul>
+
+    <!-- メンバー一覧 -->
+    <ul id="memberlist"></ul>
+  </section>
+
+  <!-- ログアウト -->
+  <form id="frm-quit">
+    <button>log aut</button>
+  </form>
+</section>
+<!-- /チャット本体 -->
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="util.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
